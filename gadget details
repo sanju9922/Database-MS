@@ -1,0 +1,99 @@
+html file
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gadget Submission Form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>Gadget Submission Form</h1>
+  <form id="gadgetForm">
+    <label for="gadgetType">Type of Gadget:</label>
+    <select id="gadgetType">
+      <option value="phone">Phone</option>
+      <option value="laptop">Laptop</option>
+      <option value="tablet">Tablet</option>
+    </select>
+
+    <label for="modelName">Model Name:</label>
+    <input type="text" id="modelName" placeholder="Enter model name">
+
+    <label for="submissionDate">Date of Submission:</label>
+    <input type="date" id="submissionDate">
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+css
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  form {
+    margin: 20px auto;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  select,
+  input[type="date"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+
+js
+document.getElementById('gadgetForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+  
+    // Get form values
+    var gadgetType = document.getElementById('gadgetType').value;
+    var modelName = document.getElementById('modelName').value;
+    var submissionDate = document.getElementById('submissionDate').value;
+  
+    // Do something with the form data (e.g., submit to a server)
+    console.log('Type of Gadget:', gadgetType);
+    console.log('Model Name:', modelName);
+    console.log('Submission Date:', submissionDate);
+  
+    // Clear form fields
+    document.getElementById('gadgetType').value = 'phone';
+    document.getElementById('modelName').value = '';
+    document.getElementById('submissionDate').value = '';
+  });
+  
